@@ -1,10 +1,10 @@
-enum PlaceType{
-    RESTAURANT= "restaurant",
-    PIZZA_RESTAURANT= "pizza_restaurant",
-    SHOPPING_MALL= "shopping_mall"
+export enum PlaceType {
+    RESTAURANT = "restaurant",
+    PIZZA_RESTAURANT = "pizza_restaurant",
+    SHOPPING_MALL = "shopping_mall"
 }
 
-export interface Place{
+export interface Place {
     text: string
     lenguaje: string
 }

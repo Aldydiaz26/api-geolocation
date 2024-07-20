@@ -11,7 +11,7 @@ interface Geometry {
     longitude: number
 }
 
-interface Address {
+export interface Address {
     components: Component
     geometry: Geometry
     formatted: string 

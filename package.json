@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "ts-node index.ts",
-    "build": "tsc"
+    "build": "tsc",
+    "dev-address-api": "ts-node ./src/database/address_api",
+    "dev-place-api": "ts-node ./src/database/place_api"
   },
   "author": "aldana diaz",
   "license": "ISC",

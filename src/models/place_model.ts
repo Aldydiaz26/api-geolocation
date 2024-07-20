@@ -1,8 +1,16 @@
-import { Place } from "./places";
+import { getAllPlaceNearly } from "../external_api/place_api";
+import { Place, PlaceType } from "./place";
+
 
 class PlaceModel {
-    public getAllPlaceNearly( latitude: number, longitude: number): Place[] {
+    public async getAllPlaceNearly(latitude: number, longitude: number, type: PlaceType): Promise<Address[] | string> {
         // todo
-        return []
+        const placeJson = await getAllPlaceNearly(latitude, longitude, type)
+
+        console.info("[resultado]" + JSON.stringify(placeJson))
+          
+        return placeJson.results
+
     }
+
 }
