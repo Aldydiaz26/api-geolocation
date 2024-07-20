@@ -31,3 +31,4 @@ class AddressModel {
         return detailJson.results
     }
 }
+export const addressModel= new AddressModel(); 

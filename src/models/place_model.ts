@@ -13,3 +13,4 @@ class PlaceModel {
     }
 
 }
+export const placeModel= new PlaceModel();
