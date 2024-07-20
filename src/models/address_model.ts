@@ -6,13 +6,12 @@ const HTTP_STATUS_CODE: number = 200
 
 class AddressModel {
     public async getDetailByAddress(addressName: string): Promise<Address[] | string> {
-        // todo
         const detailJson = await getDetailByAddress(addressName)
 
         console.info("[resultado] " + JSON.stringify(detailJson))
         
         if (detailJson?.status?.code !== HTTP_STATUS_CODE) {
-            console.error("ERROR") // completar mensaje
+            console.error("ERROR")
             return MESSAGE_ERROR_ADDRESS
         }
         
@@ -20,7 +19,6 @@ class AddressModel {
     }
 
     public async getDetailByLatitudeAndLongitude(latitude: number, longitude: number): Promise<Address[] | string> {
-        //todo
         const detailJson = await getDetailByLatitudeAndLongitude(latitude, longitude)
 
         console.info("[resultado] " + JSON.stringify(detailJson))
