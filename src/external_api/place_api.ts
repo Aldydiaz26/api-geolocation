@@ -7,8 +7,7 @@ const RADIUS: number = 1000
 
 async function getAllPlaceNearly(latitude: number, longitude: number, type: string): Promise<any> {
     const raw = JSON.stringify({
-        "includedTypes": [type
-        ],
+        "includedTypes": [type],
         "maxResultCount": MAX_QUANTITY_RESULTS,
         "locationRestriction": {
             "circle": {
@@ -20,6 +19,8 @@ async function getAllPlaceNearly(latitude: number, longitude: number, type: stri
             }
         }
     });
+
+    // console.log("[log] " + raw)
 
     const response = await fetch(PLACE_URL, {
         method: "POST",

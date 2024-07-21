@@ -1,1 +1,5 @@
-export const MESSAGE_ERROR_ADDRESS: string = "No se ha podido encontrar el resultado"
+export const MESSAGE_ERROR_ADDRESS: string = "address could not be found"
+export const MESSAGE_INVALID_ACTION: string = "this action could not be found"
+export const MESSAGE_MISSING_PARAMETER: string = "missing parameter"
+export const MESSAGE_INCORRECT_ADDRESS: string = "incorrect address"
+export const MESSAGE_INCORRECT_PLACE_TYPE: string = "incorrect place type"

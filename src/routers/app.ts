@@ -1,18 +1,26 @@
-import { Message } from "../utils/message_type";
+import { MESSAGE_INVALID_ACTION } from "../utils/message";
+import { Message, MessageResponse, ResponseType } from "../utils/type";
 import { routerAddress } from "./address_router";
 import { routerPlace } from "./place_router";
-//validarque esto sea correcto
-export async function router(data: string) {
+
+export async function router(data: string): Promise<MessageResponse> {
+    if (data === "") {
+        return { responseType: ResponseType.ERROR, message: MESSAGE_INVALID_ACTION, body: null}
+    }
+
     const message: Message = JSON.parse(data)
-    if (message.action.indexOf("/address") === 0 ) {
+    if (!message || !message.action || message.action === "") {
+        return { responseType: ResponseType.ERROR, message: MESSAGE_INVALID_ACTION, body: null}
+    }
+
+    if (message.action.indexOf("/address") === 0) {
         return await routerAddress(message)
     }
 
-    if (message.action.indexOf("/place") === 0 ) {
+    if (message.action.indexOf("/place") === 0) {
         return await routerPlace(message)
     }
 
-    return "the action is incorrect"
-
+    return { responseType: ResponseType.ERROR, message: MESSAGE_INVALID_ACTION, body: null }
 }
 

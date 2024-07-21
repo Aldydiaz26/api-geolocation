@@ -3,13 +3,12 @@ import { Place, PlaceType } from "./place";
 
 
 class PlaceModel {
-    public async getAllPlaceNearly(latitude: number, longitude: number, type: PlaceType): Promise<Place[] | string> {
+    public async getAllPlaceNearly(latitude: number, longitude: number, type: PlaceType): Promise<Place[]> {
         const placeJson = await getAllPlaceNearly(latitude, longitude, type)
 
-        console.info("[resultado]" + JSON.stringify(placeJson))
+        // console.info("[resultado]" + JSON.stringify(placeJson))
           
-        return placeJson.results
-
+        return placeJson.places
     }
 
 }

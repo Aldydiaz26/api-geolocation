@@ -8,7 +8,7 @@ async function getDetailByAddress(addressName: string): Promise<any> {
   const response = await fetch(url)
   const data = await response.json()
 
-  console.log(data)
+  // console.log(data)
 
   return data
 }
@@ -20,7 +20,7 @@ async function getDetailByLatitudeAndLongitude(latitude: number, longitude: numb
   const response = await fetch(url)
   const data = await response.json()
 
-  console.log(data)
+  // console.log(data)
 
   return data
 }
